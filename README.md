@@ -11,19 +11,45 @@ To get started, check out the repository and inspect the code.
 Some useful tips to help you get started:
 
 1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+1. To inspect the site on your phone, you can run a local HTTP server using [NGINX](http://nginx.org/en/)
+1. Download [NGINX] (http://nginx.org/en/download.html)
 
   ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
+    cd C:/
+    unzip nginx-1.13.4.zip
+    cd nginx-1.13.4
   ```
+1. Inside the `nginx-1.13.4/conf/nginx.conf`, put the following snippet of code in the `server` session
 
+  ```bash
+    listen       8080;
+    server_name  localhost;
+
+    location / {
+      root   C:/path/to/your-project-folder/frontend-nanodegree-mobile-portfolio/dist;
+      index  index.html index.htm;
+      expires 1d;
+    }
+
+    gzip on;
+    gzip_types text/css application/javascript;
+  ```
+1. Start [NGINX](http://nginx.org/en/docs/windows.html)
+
+  ```bash
+    C:\nginx-1.13.4>start nginx
+  ```
+1. Run the tasklist command-line utility to see nginx processes
+
+  ```bash
+    C:\nginx-1.13.4>tasklist /fi "imagename eq nginx.exe"
+  ```
 1. Open a browser and visit localhost:8080
 1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
 
   ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
+  cd /path/to/your-project-folder
+    ./ngrok http 8080
   ```
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
