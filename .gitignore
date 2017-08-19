@@ -60,4 +60,7 @@ typings/
 # dotenv environment variables file
 .env
 
+#NGROK
+ngrok.exe
+
 # End of https://www.gitignore.io/api/node
