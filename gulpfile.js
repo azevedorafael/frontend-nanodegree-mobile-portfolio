@@ -18,12 +18,12 @@ gulp.task('default', ['copy'], function () {
 //requires 'clean' task, thatn runs before 'copy'
 gulp.task('copy', ['clean'], function () {
     return gulp.src('./dev/**/*')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('./dist'));
 });
 
 //Delete old version of production('dist') folder
 gulp.task('clean', function () {
-    return gulp.src('dist')
+    return gulp.src('./dist')
         .pipe(clean());
 });
 
