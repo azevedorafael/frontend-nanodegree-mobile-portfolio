@@ -7,6 +7,7 @@ var gulp = require('gulp')
     , uglify = require('gulp-uglify')
     , usemin = require('gulp-usemin')
     , cssmin = require('gulp-cssmin')
+    , cssnano = require('gulp-cssnano')
     , htmlmin = require('gulp-htmlmin');
 
 
@@ -49,6 +50,7 @@ gulp.src('./dev/views/images/*')
     .pipe(gulp.dest('/dist/views/images'));
 });
 
+
 gulp.task('usemin', function () {
     return gulp.src('dist/**/*.html')
         .pipe(usemin({
@@ -58,12 +60,23 @@ gulp.task('usemin', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('minify-html', function () {
-    gulp.src('dist/*.html')
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist'));
+gulp.task('minify-js', function() {
+    return gulp.src('site/**/*.js')
+      .pipe($.uglify())
+      .pipe(gulp.dest('dist/'))
+  });
+  
+  gulp.task('minify-css', function() {
+    return gulp.src('site/**/*.css')
+      .pipe($.cssnano({safe: true}))
+      .pipe(gulp.dest('dist/'))
+  });
+  
+  gulp.task('minify-html', function() {
+    return gulp.src('site/**/*.html')
+      .pipe($.htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('dist/'))
+  });
 
-    gulp.src('dist/views/*.html')
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist/views'));
-});
+
+  
