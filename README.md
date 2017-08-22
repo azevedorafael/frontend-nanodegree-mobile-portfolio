@@ -18,25 +18,25 @@ The following performance strategy were aplied:
 - Minimize use of render blocking CSS, using inline CSS and Media Query;
 - Minimize use of parser blocking JS, using `defer` and `async` in `<script>` tags.
 
-To run Gulp tasks(Optional!):
+To run Gulp tasks (Optional!):
 
-1.Clone the repository
-1.Install [NODE JS](https://nodejs.org) on your local machine
-1.Install [NPM]([NODE JS](https://nodejs.org) on your local machine
-1.Run in the root's repo:
+1. Clone the repository
+1. Install [NODE JS](https://nodejs.org) on your local machine
+1. Install [NPM]([NODE JS](https://nodejs.org) on your local machine
+1. Run in the root's repo:
 
-    ```bash
-      npm install
+  ```bash
+    npm install
   ```
 and once dependencies are finished installing run the main task in the gulpfile.js:
 
-    ```bash
-      npm run gulp
+  ```bash
+    npm run gulp
   ```
-1.The Gulp tasks can be executed one by one (Optional!):
+1. The Gulp tasks can be executed one by one (Optional!):
 
-     ```bash
-      npm run gulp 'taskName'
+  ```bash
+    npm run gulp 'taskName'
   ```
 
 Some useful tips to help you get started:
@@ -88,8 +88,6 @@ Some useful tips to help you get started:
 Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 #### Part 2: Optimize Frames per Second in pizza.html
-
-### Optimization Tips and Tricks
 
 This second part achieved the performance required:
 
