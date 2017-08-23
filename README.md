@@ -22,7 +22,7 @@ To run Gulp tasks (Optional!):
 
 1. Clone the repository
 1. Install [NODE JS](https://nodejs.org) on your local machine
-1. Install [NPM]([NODE JS](https://nodejs.org) on your local machine
+1. Install [NPM](https://docs.npmjs.com) on your local machine
 1. Run in the root's repo:
 
   ```bash
@@ -43,7 +43,7 @@ Some useful tips to help you get started:
 
 1. Check out the repository
 1. To inspect the site on your phone, you can run a local HTTP server using [NGINX](http://nginx.org/en/)
-1. Download [NGINX] (http://nginx.org/en/download.html)
+1. Download [NGINX](http://nginx.org/en/download.html)
 
   ```bash
     cd C:/
